@@ -1,0 +1,23 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: |
+          # Thanks for your first contribution!
+          
+          We received your first issue for ${{ secrets.GITHUB_REPO }} at @MadeByThePinsHub. Congratulations on your
+          first contribution here. While you wait for someone's response, please see the `CONTRIBUTING.md` file for
+          contribution policies, best practices and other stuff.
+        pr-message: |
+          # Thanks for your first contribution!
+          
+          We heard it about your fork and you wished to pushed it to the mainstream repository, ${{ secrets.GITHUB_REPO }}
+          at @MadeByThePinsHUb. Congratulations on your first contribution here! While you wait for someone's response,
+          please see the `CONTRIBUTING.md` file fitst for contribution policies, best practices and other stuff.
