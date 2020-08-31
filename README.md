@@ -1,3 +1,7 @@
-# Your repository name here
+# GitHub org stuff
 
-The initital README file you see here is the one that is generated from the `.github` repository of the Pins team. Edit this file and customize it.
+This repository is where all GitHub stuff such as our org-wide workflow templates fall here.
+
+## Contributing
+
+Everyone can contribute to this repository. When we get an PR, we'll reveiw it and merge it with care.
