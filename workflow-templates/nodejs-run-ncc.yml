@@ -1,0 +1,36 @@
+name: "Check formatting with Prettier + Build with ncc"
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+
+    steps:
+    - name: Check-out
+      uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+      
+    - name: Install dependencies cleanly
+      run: npm ci
+
+    - name: Check formtting with Prettier.
+      # We think it's index.js, but change it if not.
+      run: npx prettier --check index.js
+
+    - name: Build index.js
+      # We think it's index.js, but change it if not.
+      run: ncc build index.js -o dist

@@ -1,0 +1,10 @@
+{
+    "name": "Check formatting with Prettier + Build with ncc",
+    "description": "Generate an production-grade Node.js file with ncc, after running Prettier.",
+    "categories": [
+        "JavaScript"
+    ],
+    "filePatterns": [
+        "package.json$"
+    ]
+}
